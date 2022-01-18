@@ -1,0 +1,13 @@
+import "globals.act";
+
+export defproc nand_gate(globals g; bool a, b, c)
+{
+	prs<g.Vdd, g.GND>
+	{
+		// TODO make a NAND gate with "a" and "b" as inputs and "c" as the output
+	}
+}
+
+globals g;
+bool a, b, c;
+nand_gate dut(g, a, b, c);

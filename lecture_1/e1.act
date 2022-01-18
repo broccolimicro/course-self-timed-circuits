@@ -1,0 +1,13 @@
+import "globals.act";
+
+export defproc inverter(globals g; bool a, b)
+{
+	prs<g.Vdd, g.GND>
+	{
+		// TODO make an inverter with "a" as the input and "b" as the output
+	}
+}
+
+globals g;
+bool a, b;
+inverter dut(g, a, b);

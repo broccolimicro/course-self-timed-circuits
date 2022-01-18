@@ -1,0 +1,24 @@
+import "globals.act";
+import "channel.act";
+
+export defproc source(globals g; e1of1 C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		// TODO make a token source on channel "C"
+	}
+}
+
+export defproc sink(globals g; e1of1 C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		// TODO make a token sink on channel "C"
+	}
+}
+
+globals g;
+e1of1 C;
+source source_C(g, C);
+sink sink_C(g, C);
