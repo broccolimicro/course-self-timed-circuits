@@ -1,0 +1,14 @@
+import "globals.act";
+
+export defproc interference(globals g; bool a, b, c)
+{
+	prs<g.Vdd, g.GND>
+	{
+		[keeper=0] a<12> -> c-
+		[keeper=0] ~b<36> -> c+
+	}
+}
+
+globals g;
+bool a, b, c;
+interference dut(g, a, b, c);

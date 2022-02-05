@@ -1,0 +1,18 @@
+import "globals.act";
+
+export defproc instability(globals g; bool a, b, c)
+{
+	bool d;
+	prs<g.Vdd, g.GND>
+	{
+		a<12,20> & b<12,20> -> d-
+		~a | ~b -> d+
+
+		d<120> -> c-
+		~d<120> | ~d<120> -> c+
+	}
+}
+
+globals g;
+bool a, b, c;
+instability dut(g, a, b, c);

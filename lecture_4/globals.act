@@ -1,0 +1,35 @@
+export deftype globals <: int<6> (bool Vdd, GND, vpsub, vnsub, Reset, _Reset, pReset, sReset, _pReset, _sReset)
+{
+	sReset = Reset;
+	_sReset = _Reset;
+}
+
+export deftype globals_np <: int<4> (bool Reset, _Reset, pReset, sReset, _pReset, _sReset)
+{
+	sReset = Reset;
+	_sReset = _Reset;
+}
+
+// PN ratio
+//preal PN = 1.4142;
+preal PN = 2.0;
+
+// Transistor minimal sizing
+pint NM = 6;
+pint PM = 6;
+
+// Gate reset output
+pint RESET_X = -2;
+pint RESET_N = -1;
+pint RESET_0 = 0;
+pint RESET_1 = 1;
+pint RESET_2 = 2;
+pint RESET_3 = 3;
+
+// Gate invert output
+pint NO_INVERT = 0;
+pint INVERT = 1;
+
+// Gate is instant
+pint NO_INSTANT = 0;
+pint INSTANT = 1;
