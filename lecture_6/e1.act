@@ -1,0 +1,47 @@
+import "globals.act";
+import "channel.act";
+
+export defproc wchb(globals g; e1of<2> L, R)
+{
+	bool _Rd[2];
+	prs<g.Vdd, g.GND>
+	{
+		// TODO implement a 1-bit WCHB buffer from L to R
+	}
+}
+
+export defproc source(globals g; e1of<2> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		C.e -> Ca-
+		~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+
+		Ca -> C.d[1]-
+		~Ca -> C.d[1]+
+	}
+
+	spec {
+		mk_exclhi(C.d[0], C.d[1])
+	}
+}
+
+export defproc sink(globals g; e1of<2> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] | C.d[1] -> C.e-
+		~C.d[0] & ~C.d[1] -> C.e+
+	}
+}
+
+globals g;
+e1of<2> L, R;
+source source_L(g, L);
+sink sink_R(g, R);
+wchb dut(g, L, R);
+
