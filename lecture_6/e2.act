@@ -1,12 +1,14 @@
 import "globals.act";
 import "channel.act";
 
-export defproc wchb(globals g; e1of<2> L, R)
+export defproc pchb(globals g; e1of<2> L, R)
 {
 	bool _Rd[2];
+
+	// TODO add variables as needed
 	prs<g.Vdd, g.GND>
 	{
-		// TODO implement a 1-bit WCHB buffer from L to R
+		// TODO implement a 1-bit PCHB buffer from L to R
 		// remember to properly reset all c-elements
 	}
 }
@@ -44,5 +46,5 @@ globals g;
 e1of<2> L, R;
 source source_L(g, L);
 sink sink_R(g, R);
-wchb dut(g, L, R);
+pchb dut(g, L, R);
 

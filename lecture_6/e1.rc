@@ -21,8 +21,4 @@ mode run
 set g._sReset 1
 set g.sReset 0
 
-set L.d[0] 0
-set L.d[1] 0
-set R.e 0
-
 advance 100

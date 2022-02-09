@@ -1,15 +1,12 @@
 import "globals.act";
 import "channel.act";
 
-export defproc pchb(globals g; e1of1 L, R)
+export defproc wchb(globals g; e1of1 L, R)
 {
 	bool _Rr;
-
-	// TODO add variables as needed
 	prs<g.Vdd, g.GND>
 	{
-		// TODO implement a dataless PCHB buffer from L to R
-		// Remember to properly reset all c-elements
+		// TODO use g.Reset and g._Reset to correctly reset your circuit from e1
 	}
 }
 
@@ -39,5 +36,5 @@ globals g;
 e1of1 L, R;
 source source_L(g, L);
 sink sink_R(g, R);
-pchb dut(g, L, R);
+wchb dut(g, L, R);
 
