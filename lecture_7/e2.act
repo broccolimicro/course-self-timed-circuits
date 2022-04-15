@@ -1,0 +1,38 @@
+import "globals.act";
+import "channel.act";
+
+export defproc copy(globals g; e1of<1> L, A, B)
+{
+	// TODO implement a 1-bit WCHB copy from L to A and B
+	// remember to properly reset all c-elements
+}
+
+export defproc source(globals g; e1of<1> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+	}
+}
+
+export defproc sink(globals g; e1of<1> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] -> C.e-
+		~C.d[0] -> C.e+
+	}
+}
+
+globals g;
+e1of<1> L, A, B;
+source source_L(g, L);
+sink sink_A(g, A);
+sink sink_B(g, B);
+copy dut(g, L, A, B, );
+

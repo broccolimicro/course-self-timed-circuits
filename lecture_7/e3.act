@@ -1,14 +1,10 @@
 import "globals.act";
 import "channel.act";
 
-export defproc wchb(globals g; e1of<2> L, R)
+export defproc and(globals g; e1of<2> A, B, R)
 {
-	bool _Rd[2];
-	prs<g.Vdd, g.GND>
-	{
-		// TODO implement a 1-bit WCHB buffer from L to R
-		// remember to properly reset all c-elements
-	}
+	// TODO implement a 1-bit WCHB copy from L to A and B
+	// remember to properly reset all c-elements
 }
 
 export defproc source(globals g; e1of<2> C)
@@ -41,8 +37,9 @@ export defproc sink(globals g; e1of<2> C)
 }
 
 globals g;
-e1of<2> L, R;
-source source_L(g, L);
+e1of<2> A, B, R;
+source source_A(g, A);
+source source_B(g, B);
 sink sink_R(g, R);
-wchb dut(g, L, R);
+and dut(g, A, B, R);
 

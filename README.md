@@ -8,13 +8,12 @@
  5. Pre-Charge Half Buffers ([slides](https://docs.google.com/presentation/d/1IfZwFHvdMxfG4m6_01otx2CuJLPcFdncUEoJ1n5sNUk/edit?usp=sharing))
  6. Encoding Data ([slides](https://docs.google.com/presentation/d/11RPcrKQg0__1eZGJA-2yfXEiUvFddsozFcmaF_xOf1w/edit?usp=sharing))
  7. Function Blocks ([slides](https://docs.google.com/presentation/d/120oF23j4JMFCgMtKpVtTTuU0RD6MOejSMFLBBfVDpmQ/edit?usp=sharing))
- 8. Conditional Inputs
- 9. Conditional Outputs
- 10. Internal Memory
- 11. Exchange Channels
- 12. Synchronization and Non-Deterministic Behavior
- 13. Formal Synthesis
- 14. Formal Verification
- 15. Bundled-Data
- 16. Bundled-Data Internal Memory
- 17. Bundled-Data Exchange Channel
+ 8. Conditional Inputs and Outputs ([slides](https://docs.google.com/presentation/d/1IaaoBDYKMXjxX-TmDgZjlVOOAm89T8f7jt8J7SNG8PU/edit?usp=sharing))
+ 9. Internal Memory
+ 10. Synchronization and Non-Deterministic Behavior
+ 11. Formal Synthesis
+ 12. Formal Verification
+ 13. Bundled-Data
+ 14. Bundled-Data Internal Memory
+ 15. Exchange Channels
+ 16. Bundled-Data Exchange Channel

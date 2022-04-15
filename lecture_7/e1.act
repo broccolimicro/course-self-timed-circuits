@@ -1,0 +1,38 @@
+import "globals.act";
+import "channel.act";
+
+export defproc merge(globals g; e1of<1> A, B, R)
+{
+	// TODO implement a 1-bit WCHB merge from A and B to R
+	// remember to properly reset all c-elements
+}
+
+export defproc source(globals g; e1of<1> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+	}
+}
+
+export defproc sink(globals g; e1of<1> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] -> C.e-
+		~C.d[0] -> C.e+
+	}
+}
+
+globals g;
+e1of<1> A, B, R;
+source source_A(g, A);
+source source_B(g, B);
+sink sink_R(g, R);
+merge dut(g, A, B, R);
+

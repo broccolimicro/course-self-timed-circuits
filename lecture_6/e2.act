@@ -18,8 +18,8 @@ export defproc source(globals g; e1of<2> C)
 	bool Ca;
 	prs<g.Vdd, g.GND>
 	{
-		C.e -> Ca-
-		~C.e -> Ca+
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
 
 		Ca -> C.d[0]-
 		~Ca -> C.d[0]+
