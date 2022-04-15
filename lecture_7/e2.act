@@ -3,7 +3,7 @@ import "channel.act";
 
 export defproc copy(globals g; e1of<1> L, A, B)
 {
-	// TODO implement a 1-bit WCHB copy from L to A and B
+	// TODO implement a WCHB copy from L to A and B
 	// remember to properly reset all c-elements
 }
 

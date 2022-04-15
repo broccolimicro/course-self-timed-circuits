@@ -1,0 +1,61 @@
+import "globals.act";
+import "channel.act";
+
+export defproc split(globals g; e1of<2> C; e1of<1> L, A, B)
+{
+	// TODO implement a WCHB split from L to A or B using C as the condition
+	// remember to properly reset all c-elements
+}
+
+export defproc source_1of1(globals g; e1of<1> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+	}
+}
+
+export defproc source_1of2(globals g; e1of<2> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+
+		Ca -> C.d[1]-
+		~Ca -> C.d[1]+
+	}
+	
+	spec {
+		mk_exclhi(C.d[0], C.d[1])
+	}
+}
+
+
+export defproc sink(globals g; e1of<1> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] -> C.e-
+		~C.d[0] -> C.e+
+	}
+}
+
+globals g;
+e1of<1> L, A, B;
+e1of<2> C;
+source_1of2 source_C(g, C);
+source_1of1 source_L(g, L);
+sink sink_A(g, A);
+sink sink_B(g, B);
+split dut(g, C, L, A, B);
+
