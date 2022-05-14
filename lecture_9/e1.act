@@ -1,0 +1,24 @@
+import "globals.act";
+import "channel.act";
+
+export defproc reg(globals g; e1of<3> L; e1of<2> R)
+{
+	// TODO implement a WCHB register from L to R
+	// remember to properly reset all c-elements and latches
+}
+
+export defproc sink(globals g; e1of<2> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] | C.d[1] -> C.e-
+		~C.d[0] & ~C.d[1] -> C.e+
+	}
+}
+
+globals g;
+e1of<2> R;
+e1of<3> L;
+sink sink_R(g, R);
+reg dut(g, L, R);
+
