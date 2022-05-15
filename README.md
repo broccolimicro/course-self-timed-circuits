@@ -9,7 +9,7 @@
  6. Encoding Data ([slides](https://docs.google.com/presentation/d/11RPcrKQg0__1eZGJA-2yfXEiUvFddsozFcmaF_xOf1w/edit?usp=sharing))
  7. Function Blocks ([slides](https://docs.google.com/presentation/d/120oF23j4JMFCgMtKpVtTTuU0RD6MOejSMFLBBfVDpmQ/edit?usp=sharing))
  8. Conditional Inputs and Outputs ([slides](https://docs.google.com/presentation/d/1IaaoBDYKMXjxX-TmDgZjlVOOAm89T8f7jt8J7SNG8PU/edit?usp=sharing))
- 9. Internal Memory
+ 9. Internal Memory ([slides](https://docs.google.com/presentation/d/1DIC0wArQZZ4JTQ50VDLF3F7fV2C3amQUxzAei4kqU3g/edit?usp=sharing))
  10. Synchronization and Non-Deterministic Behavior
  11. Formal Synthesis
  12. Formal Verification

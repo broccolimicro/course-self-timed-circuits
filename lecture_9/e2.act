@@ -9,9 +9,9 @@ verify correct output for a given input.
 
 */
 
-export defproc reg(globals g; e1of<3> L; e1of<2> R)
+export defproc xor(globals g; e1of<2> L; e1of<2> R)
 {
-	// TODO implement a WCHB register from L to R
+	// TODO implement a WCHB streamed xor from L to R
 	// remember to properly reset all c-elements and latches
 }
 
@@ -25,8 +25,7 @@ export defproc sink(globals g; e1of<2> C)
 }
 
 globals g;
-e1of<2> R;
-e1of<3> L;
+e1of<2> L, R;
 sink sink_R(g, R);
-reg dut(g, L, R);
+xor dut(g, L, R);
 
