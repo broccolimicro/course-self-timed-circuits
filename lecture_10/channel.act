@@ -1,0 +1,13 @@
+import "globals.act";
+
+export template <pint N>
+deftype c1of <: int (bool d[N])
+{
+}
+
+
+export template <pint N>
+defchan e1of <: chan(int) (bool d[N]; bool e)
+{
+}
+

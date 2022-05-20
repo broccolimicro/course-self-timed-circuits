@@ -1,0 +1,7 @@
+import "globals.act";
+import "channel.act";
+import "sync.act";
+
+globals g;
+bool a, b, u, v;
+exclhi_ideal dut(g, a, b, u, v);

@@ -1,0 +1,47 @@
+import "globals.act";
+
+defproc exclhi(globals g; bool a, b, u, v)
+{
+	bool _u, _v;
+	// TODO Tell prsim to make _u and _v mutually exclusive low
+	spec
+	{
+	}
+
+	// TODO Implement mutex element
+	prs <g.Vdd, g.GND>
+	{
+	}
+
+	// TODO Implement metastability filter
+	prs <_v, g.GND>
+	{
+	}
+
+	prs <_u, g.GND>
+	{
+	}
+}
+
+defproc exclhi_ideal(globals g; bool a, b, u, v)
+{
+	bool _u, _v;
+	// TODO Tell prsim to make _u and _v mutually exclusive low
+	spec
+	{
+	}
+
+	// TODO Implement mutex element
+	prs <g.Vdd, g.GND>
+	{
+	}
+
+	// TODO Implement metastability filter
+	prs <_v, g.GND>
+	{
+	}
+
+	prs <_u, g.GND>
+	{
+	}
+}

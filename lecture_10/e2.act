@@ -1,0 +1,37 @@
+import "globals.act";
+import "channel.act";
+import "sync.act";
+
+export defproc tree_arbiter(globals g; e1of<1> A, B, S)
+{
+	// TODO Implement a tree arbiter
+}
+
+export defproc source(globals g; e1of<1> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+	}
+}
+
+export defproc sink(globals g; e1of<1> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] -> C.e-
+		~C.d[0] -> C.e+
+	}
+}
+
+globals g;
+e1of<1> A, B, S;
+source source_A(g, A);
+source source_B(g, B);
+sink sink_S(g, S);
+tree_arbiter dut(g, A, B, S);
