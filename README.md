@@ -12,7 +12,7 @@
  9. Internal Memory ([slides](https://docs.google.com/presentation/d/1DIC0wArQZZ4JTQ50VDLF3F7fV2C3amQUxzAei4kqU3g/edit?usp=sharing)) Lecture: 1 hour, Exercises: 1 hour 30 minutes
  10. Synchronization and Non-Deterministic Behavior ([slides](https://docs.google.com/presentation/d/11K5VCcOnHrCuIEmvdDteaNvExloH2vYktGNZ2-BkvZA/edit?usp=sharing)) 1 hour 30 minutes
  11. Formal Synthesis: Handshake Expansion and Reshuffling ([slides](https://docs.google.com/presentation/d/1blmj0OBZUJvpxFjKeKmNuEUXaSdWKUTZn05lUXbB5P8/edit?usp=sharing))
- 12. Formal Synthesis: Projection and Process Decomposition
+ 12. Formal Synthesis: Projection and Process Decomposition ([slides](https://docs.google.com/presentation/d/1-uvrOhVYTW4cK9nCpoyAb5Pro2PCQ14De_tQLkfKiYE/edit?usp=sharing))
  13. Formal Synthesis: Simulation and State Elaboration
  14. Formal Synthesis: State Conflicts and State Variable Insertion
  15. Formal Synthesis: Guard Strengthening
