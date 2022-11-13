@@ -1,28 +1,37 @@
 # Introduction to Self-Timed Circuits
 
 ## Lectures
- 1. Digital Logic and Production Rules ([slides](https://docs.google.com/presentation/d/1FRVrQa0nEyhvQGNShdhy51kqQUQ7c5ABfCozDBB6NFI/edit?usp=sharing)) Lecture: 30 minutes, Exercises: 30 minutes
- 2. Introduction to Self Timed Circuits ([slides](https://docs.google.com/presentation/d/11w59jPf3YmbpAyRkBiP9-37KjHjU1f4FMW0M1xEFANQ/edit?usp=sharing)) Lecture: 30 minutes, Exercises: 30 minutes
- 3. Weak Condition Half Buffers ([slides](https://docs.google.com/presentation/d/1rhX8NpYjSPOusMYqh9mkT4VHOUP-ZH7LzGWJoKh6vrs/edit?usp=sharing)) Lecture: 30 minutes, Exercises: 30 minutes
- 4. Fundamental Concepts ([slides](https://docs.google.com/presentation/d/1HT5QB9E-94wxLR09xclKv-eHCCeo5yGKxiMjLOxaWq4/edit?usp=sharing)) Lecture: 30 minutes, Exercises: 30 minutes
- 5. Pre-Charge Half Buffers ([slides](https://docs.google.com/presentation/d/1IfZwFHvdMxfG4m6_01otx2CuJLPcFdncUEoJ1n5sNUk/edit?usp=sharing)) Lecture: 30 minutes, Exercises: 30 minutes
- 6. Encoding Data ([slides](https://docs.google.com/presentation/d/11RPcrKQg0__1eZGJA-2yfXEiUvFddsozFcmaF_xOf1w/edit?usp=sharing)) Lecture: 30 minutes, Exercises: 30 minutes
- 7. Function Blocks ([slides](https://docs.google.com/presentation/d/120oF23j4JMFCgMtKpVtTTuU0RD6MOejSMFLBBfVDpmQ/edit?usp=sharing)) Lecture: 1 hour 30 minutes, Exercises: 1 hour
- 8. Conditional Inputs and Outputs ([slides](https://docs.google.com/presentation/d/1IaaoBDYKMXjxX-TmDgZjlVOOAm89T8f7jt8J7SNG8PU/edit?usp=sharing)) Lecture: 30 minutes, Exercises: 30 minutes
- 9. Internal Memory ([slides](https://docs.google.com/presentation/d/1DIC0wArQZZ4JTQ50VDLF3F7fV2C3amQUxzAei4kqU3g/edit?usp=sharing)) Lecture: 1 hour, Exercises: 1 hour 30 minutes
- 10. Synchronization and Non-Deterministic Behavior ([slides](https://docs.google.com/presentation/d/11K5VCcOnHrCuIEmvdDteaNvExloH2vYktGNZ2-BkvZA/edit?usp=sharing)) 1 hour 30 minutes
- 11. Formal Synthesis: Handshake Expansion and Reshuffling ([slides](https://docs.google.com/presentation/d/1blmj0OBZUJvpxFjKeKmNuEUXaSdWKUTZn05lUXbB5P8/edit?usp=sharing))
- 12. Formal Synthesis: Projection and Process Decomposition ([slides](https://docs.google.com/presentation/d/1-uvrOhVYTW4cK9nCpoyAb5Pro2PCQ14De_tQLkfKiYE/edit?usp=sharing))
- 13. Formal Synthesis: Simulation and State Elaboration
- 14. Formal Synthesis: State Conflicts and State Variable Insertion
- 15. Formal Synthesis: Guard Strengthening
- 16. Formal Synthesis: Bubble Reshuffling
- 17. Formal Syntehsis: Reset Circuitry
- 18. Optimization Techniques
- 19. Advanced Internal Memory
- 20. Advanced Synchronization and Non-Deterministic Behavior
- 21. Exchange Channels ([slides](https://docs.google.com/presentation/d/1SvY3RujDydKP7lhBaLgJv4gzUOfHDgsS6c2R74xDAOk/edit?usp=sharing))
- 22. Asynchronous to Synchronous Interfacing
+### Fundamentals
+ 1. Digital Logic and Production Rules ([slides](https://docs.google.com/presentation/d/1FRVrQa0nEyhvQGNShdhy51kqQUQ7c5ABfCozDBB6NFI/edit?usp=sharing))
+ 2. Introduction to Self Timed Circuits ([slides](https://docs.google.com/presentation/d/11w59jPf3YmbpAyRkBiP9-37KjHjU1f4FMW0M1xEFANQ/edit?usp=sharing))
+ 3. Weak Condition Half Buffers ([slides](https://docs.google.com/presentation/d/1rhX8NpYjSPOusMYqh9mkT4VHOUP-ZH7LzGWJoKh6vrs/edit?usp=sharing))
+ 4. Fundamental Concepts ([slides](https://docs.google.com/presentation/d/1HT5QB9E-94wxLR09xclKv-eHCCeo5yGKxiMjLOxaWq4/edit?usp=sharing))
+ 5. Pre-Charge Half Buffers ([slides](https://docs.google.com/presentation/d/1IfZwFHvdMxfG4m6_01otx2CuJLPcFdncUEoJ1n5sNUk/edit?usp=sharing))
+ 6. Encoding Data ([slides](https://docs.google.com/presentation/d/11RPcrKQg0__1eZGJA-2yfXEiUvFddsozFcmaF_xOf1w/edit?usp=sharing))
+
+### Templated Synthesis
+ 7. Multiple Requests ([slides](https://docs.google.com/presentation/d/1i_PfY2zaYus-25HBVJYzH8-zNFZOyBCEWSfOkJSA0d0/edit?usp=sharing))
+ 8. Early Out and Stack Length ([slides](https://docs.google.com/presentation/d/1gKU_824vwHMv1u0QCIvc35YFyGc5vPDBtQ1BrnF9hdw/edit?usp=sharing))
+ 9. Function Blocks ([slides](https://docs.google.com/presentation/d/120oF23j4JMFCgMtKpVtTTuU0RD6MOejSMFLBBfVDpmQ/edit?usp=sharing))
+ 10. Conditional Inputs and Outputs ([slides](https://docs.google.com/presentation/d/1IaaoBDYKMXjxX-TmDgZjlVOOAm89T8f7jt8J7SNG8PU/edit?usp=sharing))
+ 11. Internal Memory ([slides](https://docs.google.com/presentation/d/1DIC0wArQZZ4JTQ50VDLF3F7fV2C3amQUxzAei4kqU3g/edit?usp=sharing))
+ 12. Protected Forward Drivers ([slides](https://docs.google.com/presentation/d/1EA9WOFDRXDcVtSj8UCyJcFyFKcE7Cm_kH0NdH2MQn8M/edit?usp=sharing))
+
+### Formal Synthesis
+ 13. Handshake Expansion and Reshuffling ([slides](https://docs.google.com/presentation/d/1blmj0OBZUJvpxFjKeKmNuEUXaSdWKUTZn05lUXbB5P8/edit?usp=sharing))
+ 14. Projection and Process Decomposition ([slides](https://docs.google.com/presentation/d/1-uvrOhVYTW4cK9nCpoyAb5Pro2PCQ14De_tQLkfKiYE/edit?usp=sharing))
+ 15. Simulation and State Elaboration
+ 16. State Conflicts and State Variable Insertion
+ 17. Guard Strengthening
+ 18. Bubble Reshuffling
+ 19. Reset Circuitry
+
+### Advanced Topics
+ 20. Advanced Internal Memory
+ 21. Optimization Techniques
+ 22. Exchange Channels ([slides](https://docs.google.com/presentation/d/1SvY3RujDydKP7lhBaLgJv4gzUOfHDgsS6c2R74xDAOk/edit?usp=sharing))
+ 23. Synchronization and Non-Deterministic Behavior ([slides](https://docs.google.com/presentation/d/11K5VCcOnHrCuIEmvdDteaNvExloH2vYktGNZ2-BkvZA/edit?usp=sharing)) 1 hour 30 minutes
+ 24. Advanced Synchronization and Non-Deterministic Behavior
 
 ## Other Topics of Note
  - Bundled-Data
@@ -31,6 +40,7 @@
  - 2-Phase Pipelines
  - Memory Arrays and Control Logic
  - Syntax-Directed Translation
+ - Asynchronous to Synchronous Interfacing
  - Formal Verification
    - State Elaboration
    - Handshaking Expansions
