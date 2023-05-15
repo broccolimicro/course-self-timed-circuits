@@ -1,9 +1,9 @@
 e1:
-	aflat -DDUT=true e1.act > e1.prs
+	aflat -Tsky130 -DDUT=true e1.act > e1.prs
 	prspice -s "g.Vdd=1.8;g.GND=0.0" -p "cond_merge<>" -i "dut" -C sky130 e1.act e1.rc
 
 e2:
-	aflat -DDUT=true e2.act > e2.prs
+	aflat -Tsky130 -DDUT=true e2.act > e2.prs
 	prspice -s "g.Vdd=1.8;g.GND=0.0" -p "split<>" -i "dut" -C sky130 e2.act e2.rc
 
 clean:
