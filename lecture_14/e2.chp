@@ -1,0 +1,4 @@
+// Write out a single process CHP for a configurable operator with add, subtract, AND, OR, XOR, and shift
+
+// Project that CHP into separate processes, keep in mind the exercise from the previous lecture
+

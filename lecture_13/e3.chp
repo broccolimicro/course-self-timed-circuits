@@ -1,0 +1,4 @@
+// Write out the CHP for a 1-bit operator that can be configured to be an adder, subtractor, AND, OR, XOR, or shifter
+
+// Expand into HSE and reshuffle to optimize circuit area
+

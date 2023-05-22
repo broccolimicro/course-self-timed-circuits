@@ -20,7 +20,7 @@
 ### Formal Synthesis
  13. Handshake Expansion and Reshuffling ([slides](https://docs.google.com/presentation/d/1blmj0OBZUJvpxFjKeKmNuEUXaSdWKUTZn05lUXbB5P8/edit?usp=sharing))
  14. Projection and Process Decomposition ([slides](https://docs.google.com/presentation/d/1-uvrOhVYTW4cK9nCpoyAb5Pro2PCQ14De_tQLkfKiYE/edit?usp=sharing))
- 15. Simulation and State Elaboration
+ 15. Simulation and State Elaboration ([slides](https://docs.google.com/presentation/d/1Ut5HU87ZwM1Id4V2DR_bboL6KWylS7WK623EHxvU43A/edit?usp=sharing))
  16. State Conflicts and State Variable Insertion
  17. Guard Strengthening
  18. Bubble Reshuffling

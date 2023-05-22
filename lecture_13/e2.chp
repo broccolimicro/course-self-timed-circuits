@@ -1,0 +1,4 @@
+// Write out the CHP for a 1-bit full adder
+
+// Expand into HSE and reshuffle to optimize circuit area
+
