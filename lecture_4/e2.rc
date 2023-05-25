@@ -25,5 +25,5 @@ set g._sReset 1
 set g.sReset 0
 
 # TODO trigger an instability on c
-# TODO trigger a dynamic node on c
+# TODO trigger weak interference on c
 
