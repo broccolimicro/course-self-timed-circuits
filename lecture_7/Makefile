@@ -11,4 +11,4 @@ e3:
 	prspice -s "g.Vdd=1.8;g.GND=0.0" -p "copy<>" -i "dut" -C sky130 e3.act e3.rc
 
 clean:
-	rm -rf e1 e1.prs e2 e2.prs e3 e3.prs
+	rm -rf e1 e1.prs e2 e2.prs e3 e3.prs mem.log
