@@ -3,7 +3,7 @@ import "channel.act";
 
 export defproc and(globals g; e1of<2> A, B, R)
 {
-	// TODO implement a WCHB AND from A and B to R, don't use early out
+	// TODO implement a WCHB AND from A and B to R, use early out
 	// remember to properly reset all c-elements
 }
 
