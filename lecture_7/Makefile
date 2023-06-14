@@ -8,7 +8,7 @@ e2:
 
 e3:
 	aflat -Tsky130 -DDUT=true e3.act > e3.prs
-	prspice -s "g.Vdd=1.8;g.GND=0.0" -p "and<>" -i "dut" -C sky130 e3.act e3.rc
+	prspice -s "g.Vdd=1.8;g.GND=0.0" -p "copy<>" -i "dut" -C sky130 e3.act e3.rc
 
 clean:
 	rm -rf e1 e1.prs e2 e2.prs e3 e3.prs
