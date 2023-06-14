@@ -1,0 +1,47 @@
+import "globals.act";
+import "channel.act";
+
+export defproc add(globals g; e1of<2> A, B, Ci, S, Co)
+{
+	// TODO implement a PCHB Adder
+	// remember to properly reset all c-elements
+}
+
+export defproc source(globals g; e1of<2> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+
+		Ca -> C.d[1]-
+		~Ca -> C.d[1]+
+	}
+
+	spec {
+		mk_exclhi(C.d[0], C.d[1])
+	}
+}
+
+export defproc sink(globals g; e1of<2> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] | C.d[1] -> C.e-
+		~C.d[0] & ~C.d[1] -> C.e+
+	}
+}
+
+globals g;
+e1of<2> A, B, Ci, S, Co;
+source source_A(g, A);
+source source_B(g, B);
+source source_Ci(g, Ci);
+sink sink_S(g, S);
+sink sink_Co(g, Co);
+add dut(g, A, B, Ci, S, Co);
+
