@@ -1,29 +1,10 @@
 import "globals.act";
 import "channel.act";
 
-export defproc merge(globals g; e1of<2> A, B, R)
+export defproc and(globals g; e1of<2> A, B, R)
 {
-	bool _Rd0, _Rd1;
-	bool Le;
-	A.e = Le;
-	B.e = Le;
-
-	prs <g.Vdd, g.GND>
-	{
-		R.e & A.d[0] & B.d[0] -> _Rd0-
-		R.e & A.d[1] -> _Rd1-
-		~_Rd0 -> R.d[0]+
-		~_Rd1 -> R.d[1]+
-
-		R.d[0] | R.d[1] -> Le-
-
-		~R.e & ~A.d[0] & ~B.d[0] -> _Rd0+
-		~R.e & ~A.d[1] -> _Rd1+
-		_Rd0 -> R.d[0]-
-		_Rd1 -> R.d[1]-
-
-		~R.d[0] & ~R.d[1] -> Le+
-	}
+	// TODO implement a WCHB AND from A and B to R
+	// remember to properly reset all c-elements
 }
 
 export defproc source(globals g; e1of<2> C)
@@ -60,5 +41,5 @@ e1of<2> A, B, R;
 source source_A(g, A);
 source source_B(g, B);
 sink sink_R(g, R);
-merge dut(g, A, B, R);
+and dut(g, A, B, R);
 
