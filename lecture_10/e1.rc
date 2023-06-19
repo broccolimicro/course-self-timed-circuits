@@ -1,5 +1,15 @@
 initialize
-random 0 10
+random
+
+set_reset g.Reset
+
+bundle L.d[0:3] high
+channel L e d[0:3] e
+inject L request loop e1_L.dat
+
+bundle R.d[0:2] high
+channel R e d[0:2] e
+expect R request loop e1_R.dat
 
 mode reset
 set g.Vdd 1
@@ -10,15 +20,15 @@ set g._pReset 0
 set g.pReset 1
 watchall
 
-advance 40
+cycle
 
 set g._pReset 1
 set g.pReset 0
 
-advance 40
+cycle
 
 mode run
 set g._sReset 1
 set g.sReset 0
 
-advance 100
+advance 1000000

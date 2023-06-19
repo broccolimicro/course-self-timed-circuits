@@ -1,13 +1,26 @@
 import "globals.act";
 import "channel.act";
 
-export defproc add(globals g; e1of<2> A, B, Ci, S, Co)
+export defproc cond_merge(globals g; e1of<2> C; e1of<1> A, B, R)
 {
-	// TODO implement a WCHB Adder
+	// TODO implement a WCHB conditional merge from A and B to R using C as the condition
 	// remember to properly reset all c-elements
 }
 
-export defproc source(globals g; e1of<2> C)
+export defproc source_1of1(globals g; e1of<1> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+	}
+}
+
+export defproc source_1of2(globals g; e1of<2> C)
 {
 	bool Ca;
 	prs<g.Vdd, g.GND>
@@ -21,27 +34,28 @@ export defproc source(globals g; e1of<2> C)
 		Ca -> C.d[1]-
 		~Ca -> C.d[1]+
 	}
-
+	
 	spec {
 		mk_exclhi(C.d[0], C.d[1])
 	}
 }
 
-export defproc sink(globals g; e1of<2> C)
+
+export defproc sink(globals g; e1of<1> C)
 {
 	prs <g.Vdd, g.GND>
 	{
-		C.d[0] | C.d[1] -> C.e-
-		~C.d[0] & ~C.d[1] -> C.e+
+		C.d[0] -> C.e-
+		~C.d[0] -> C.e+
 	}
 }
 
 globals g;
-e1of<2> A, B, Ci, S, Co;
-source source_A(g, A);
-source source_B(g, B);
-source source_Ci(g, Ci);
-sink sink_S(g, S);
-sink sink_Co(g, Co);
-add dut(g, A, B, Ci, S, Co);
+e1of<1> A, B, R;
+e1of<2> C;
+source_1of2 source_C(g, C);
+source_1of1 source_A(g, A);
+source_1of1 source_B(g, B);
+sink sink_R(g, R);
+cond_merge dut(g, C, A, B, R);
 

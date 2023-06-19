@@ -1,61 +1,32 @@
 import "globals.act";
 import "channel.act";
 
-export defproc cond_merge(globals g; e1of<2> C; e1of<1> A, B, R)
+/*
+
+This exercise introduces functional verification into your tests. See e1.rc for
+the commands that describe the channel and load inject and expect files to
+verify correct output for a given input.
+
+*/
+
+export defproc reg(globals g; e1of<3> L; e1of<2> R)
 {
-	// TODO implement a WCHB conditional merge from A and B to R using C as the condition
-	// remember to properly reset all c-elements
+	// TODO implement a WCHB register from L to R
+	// remember to properly reset all c-elements and latches
 }
 
-export defproc source_1of1(globals g; e1of<1> C)
-{
-	bool Ca;
-	prs<g.Vdd, g.GND>
-	{
-		g._sReset & C.e -> Ca-
-		~g._sReset | ~C.e -> Ca+
-
-		Ca -> C.d[0]-
-		~Ca -> C.d[0]+
-	}
-}
-
-export defproc source_1of2(globals g; e1of<2> C)
-{
-	bool Ca;
-	prs<g.Vdd, g.GND>
-	{
-		g._sReset & C.e -> Ca-
-		~g._sReset | ~C.e -> Ca+
-
-		Ca -> C.d[0]-
-		~Ca -> C.d[0]+
-
-		Ca -> C.d[1]-
-		~Ca -> C.d[1]+
-	}
-	
-	spec {
-		mk_exclhi(C.d[0], C.d[1])
-	}
-}
-
-
-export defproc sink(globals g; e1of<1> C)
+export defproc sink(globals g; e1of<2> C)
 {
 	prs <g.Vdd, g.GND>
 	{
-		C.d[0] -> C.e-
-		~C.d[0] -> C.e+
+		C.d[0] | C.d[1] -> C.e-
+		~C.d[0] & ~C.d[1] -> C.e+
 	}
 }
 
 globals g;
-e1of<1> A, B, R;
-e1of<2> C;
-source_1of2 source_C(g, C);
-source_1of1 source_A(g, A);
-source_1of1 source_B(g, B);
+e1of<2> R;
+e1of<3> L;
 sink sink_R(g, R);
-cond_merge dut(g, C, A, B, R);
+reg dut(g, L, R);
 
