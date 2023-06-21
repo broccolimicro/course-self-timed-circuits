@@ -1,0 +1,48 @@
+import "globals.act";
+import "channel.act";
+
+export template <pint sz>
+defproc add_bit(globals g; e1of<2> A, B, Ci, S, Co)
+{
+	preal n1 = 1.0*sz;
+	preal n2 = 2.0*sz;
+	preal n3 = 3.0*sz;
+	preal n4 = 4.0*sz;
+	preal n5 = 5.0*sz;
+	preal p1 = 1.0*sz*PN;
+	preal p2 = 2.0*sz*PN;
+	preal p3 = 3.0*sz*PN;
+	preal p4 = 4.0*sz*PN;
+
+	// TODO Create a PCHB full adder, use the above constants for sizing
+}
+
+export defproc source(globals g; e1of<2> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+
+		Ca -> C.d[1]-
+		~Ca -> C.d[1]+
+	}
+
+	spec {
+		mk_exclhi(C.d[0], C.d[1])
+	}
+}
+
+export defproc sink(globals g; e1of<2> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] | C.d[1] -> C.e-
+		~C.d[0] & ~C.d[1] -> C.e+
+	}
+}
+

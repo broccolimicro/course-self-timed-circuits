@@ -1,0 +1,23 @@
+import "globals.act";
+import "channel.act";
+import "add.act";
+
+// TODO Create a templated ripple carry adder, see below for the interface.
+
+pint N = 32;
+globals g;
+e1of<2> A[N], B[N], Ci, S[N], Co;
+
+source source_A[N];
+source source_B[N];
+sink sink_S[N];
+
+source source_Ci(g, Ci);
+sink sink_Co(g, Co);
+(i:N:
+	source_A[i](g, A[i]);
+	source_B[i](g, B[i]);
+	sink_S[i](g, S[i]);
+)
+add_ripple<N, 6> dut(g, A, B, Ci, S, Co);
+
