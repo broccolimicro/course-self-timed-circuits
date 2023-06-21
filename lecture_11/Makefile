@@ -1,6 +1,7 @@
 e1:
 	aflat -Tsky130 -DDUT=true e1.act > e1.prs
-	prspice -s "g.Vdd=1.8;g.GND=0.0" -p "xor<>" -i "dut" -C sky130 e1.act e1.rc
+	prspice -s "g.Vdd=1.8;g.GND=0.0" -p "xor<>" -i "dut" -C sky130 e1.act e1_xyce.rc
+	cp e1_*.dat e1
 
 clean:
-	rm -rf e1 e1.prs e2 e2.prs e3 e3.prs
+	rm -rf e1 *.prs *.sim *.vcd mem.log

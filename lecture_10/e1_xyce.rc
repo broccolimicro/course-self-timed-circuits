@@ -1,6 +1,16 @@
 initialize
 random 0 10
 
+set_reset g.Reset
+
+bundle L.d[0:3] high
+channel L e d[0:3] e
+inject L request loop e1_L.dat
+
+bundle R.d[0:2] high
+channel R e d[0:2] e
+expect R request loop e1_R.dat
+
 mode reset
 set g.Vdd 1
 set g.GND 0
@@ -9,9 +19,6 @@ set g.sReset 1
 set g._pReset 0
 set g.pReset 1
 watchall
-
-set a 0
-set b 0
 
 advance 40
 
@@ -24,5 +31,4 @@ mode run
 set g._sReset 1
 set g.sReset 0
 
-# TODO trigger interference on c
-# TODO trigger a dynamic node on c
+advance 10000

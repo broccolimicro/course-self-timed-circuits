@@ -1,5 +1,5 @@
 initialize
-random 0 10
+random
 
 mode reset
 set g.Vdd 1
@@ -10,12 +10,12 @@ set g._pReset 0
 set g.pReset 1
 watchall
 
-advance 40
+cycle
 
 set g._pReset 1
 set g.pReset 0
 
-advance 40
+cycle
 
 mode run
 set g._sReset 1
@@ -24,4 +24,4 @@ set g.sReset 0
 set L.r 0
 set R.e 0
 
-advance 100
+advance 10000

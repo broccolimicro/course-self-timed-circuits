@@ -1,5 +1,5 @@
 initialize
-random 0 10
+norandom
 
 mode reset
 set g.Vdd 1
@@ -22,13 +22,13 @@ set g._sReset 1
 set g.sReset 0
 
 set a 0
-advance 5
+advance 20
 
 set a 1
-advance 5
+advance 20
 
 set a 0
-advance 5
+advance 20
 
 set a 1
-advance 5
+advance 20
