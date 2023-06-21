@@ -15,7 +15,7 @@
  9. Conditional Inputs and Outputs ([slides](https://docs.google.com/presentation/d/1nXX4WGaIJvcG3CUZzMOjIllyQe81UEInZ6kzA65aitg/edit?usp=share_link))
  10. Internal Memory ([slides](https://docs.google.com/presentation/d/1Tme2K670CnikIEX6aqYH_krpukfNJIAZXqUp0d_spv4/edit?usp=share_link))
  11. Protected Forward Drivers ([slides](https://docs.google.com/presentation/d/1CO_WGqkgJpxIOGpSIcCbnd1i7_t2oloIKbncIudVl5E/edit?usp=share_link))
- 12. ACT Language
+ 12. ACT Language ([slides](https://docs.google.com/presentation/d/169Bvo2WfLbIdNftJpTsod2BLpuai5bUOgmNEvfK_cyk/edit?usp=sharing))
 
 ### Formal Synthesis
  13. Handshake Expansion and Reshuffling ([slides](https://docs.google.com/presentation/d/1Cjdcc43FuQkDwYWfZaaUgW7zwDpzmnJi6e053RyDCiI/edit?usp=share_link))
