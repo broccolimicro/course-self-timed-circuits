@@ -5,11 +5,11 @@ set_reset g.Reset
 
 bundle L.d[0:2] high
 channel L e d[0:2] e
-inject L request loop e2_L.dat
+inject L request loop e1_L.dat
 
 bundle R.d[0:2] high
 channel R e d[0:2] e
-expect R request loop e2_R.dat
+expect R request loop e1_R.dat
 
 mode reset
 set g.Vdd 1
