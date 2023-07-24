@@ -1,0 +1,8 @@
+// Create an HSE for the following CHP:
+// *[ L?l;
+//   [ l == 0 -> R!0; R!0
+//   [] l == 1 -> R!0; R!1
+//   ]
+//  ]
+
+
