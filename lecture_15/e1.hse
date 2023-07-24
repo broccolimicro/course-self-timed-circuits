@@ -1,4 +1,4 @@
-// write out a simulatable HSE for your circuits from the previous lecture
+// write out a simulate the half-adder HSE from the previous lecture
 
 // generate an elaborated graph from that HSE using hsesim
 
