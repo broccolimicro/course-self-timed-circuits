@@ -1,0 +1,31 @@
+initialize
+random
+
+mode reset
+set g.Vdd 1
+set g.GND 0
+set g._sReset 0
+set g.sReset 1
+set g._pReset 0
+set g.pReset 1
+watchall
+
+cycle
+
+set g._pReset 1
+set g.pReset 0
+
+cycle
+
+mode run
+set g._sReset 1
+set g.sReset 0
+
+set L.e 1
+set L.r 0
+set R.e 1
+set R.r 0
+set dut.v2 0
+set dut.v1 0
+
+advance 10000

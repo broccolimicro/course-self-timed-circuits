@@ -1,0 +1,31 @@
+// Compile this using chp2hse and hse2prs
+
+channel a4pe
+{
+  node<1> r := 0;
+  node<1> e := 1;
+
+  operator!()
+  {
+	r+; [~e]; r-; [e]
+  }
+
+  operator?()
+  {
+	[r]; e-; [~r]; e+
+  }
+}
+
+process stream(a4pe L, a4pe R)
+{
+  node<1> v1 := 0;
+  node<1> v2 := 0;
+  *[[L.e & R.e & L.r]; R.r+; v1+; [~R.e]; R.r-; v2+; v1-;
+	  [L.e & R.e & L.r]; R.r+; L.e-; [~R.e]; R.r-; v2-;
+	  [~L.r]; L.e+
+   ]
+}
+{
+  *[L!] || *[R?]
+}
+

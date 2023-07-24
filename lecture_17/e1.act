@@ -1,0 +1,40 @@
+import "globals.act";
+import "channel.act";
+
+export defproc stream(globals g; e1of1 L, R)
+{
+	// implement the following HSE
+	// *[[L.e & R.e & L.r]; R.r+; [~R.e]; R.r-;
+	//   [L.e & R.e & L.r]; R.r+; L.e-; [~R.e]; R.r-;
+	//   [~L.r]; L.e+
+	//  ]
+}
+
+export defproc source(globals g; e1of1 C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		C.e -> Ca-
+		~C.e -> Ca+
+
+		Ca -> C.r-
+		~Ca -> C.r+
+	}
+}
+
+export defproc sink(globals g; e1of1 C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.r -> C.e-
+		~C.r -> C.e+
+	}
+}
+
+globals g;
+e1of1 L, R;
+source source_L(g, L);
+sink sink_R(g, R);
+stream dut(g, L, R);
+
