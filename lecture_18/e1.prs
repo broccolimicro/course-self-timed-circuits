@@ -1,0 +1,12 @@
+~reset & L.e & R.e & L.r & ~v1 -> R.r+
+~reset & ~v2 & R.r -> v1+
+ reset | (v1 | ~L.e) & ~R.e -> R.r-
+~reset & v1 & ~R.r -> v2+
+ reset | v2 -> v1-
+~reset & v2 & R.r -> L.e-
+ reset | ~L.e & ~R.r -> v2-
+ reset | ~v2 & ~L.r -> L.e+
+R.r -> R.e-
+~R.r -> R.e+
+L.e -> L.r+
+~L.e -> L.r-
