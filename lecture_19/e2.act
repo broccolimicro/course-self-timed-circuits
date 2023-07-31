@@ -1,0 +1,11 @@
+import "globals.act";
+import "channel.act";
+
+export defproc exchangeN(globals g; e1ofNx1ofM<2, 2> L; e1ofNx1ofM<2, 2> R)
+{
+	// TODO implement a WCHB negative exchange buffer from L to R
+}
+
+globals g;
+e1ofNx1ofM<2, 2> L, R;
+exchangeN dut(g, L, R);
