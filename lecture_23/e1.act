@@ -1,0 +1,10 @@
+import "globals.act";
+import "channel.act";
+import "sync.act";
+
+globals g;
+e1of<1> A, S;
+bool uA;
+source source_A(g, A);
+sink sink_S(g, S);
+maybe_execute dut(g, A, S, uA);

@@ -7,4 +7,4 @@ e2:
 	prspice -s "g.Vdd=1.8;g.GND=0.0" -p "tree_arbiter<>" -i "dut" -C sky130 e2.act e2.rc
 
 clean:
-	rm -rf e1 e1.prs e2 e2.prs e3 e3.prs
+	rm -rf e1 e1.prs e2 e2.prs e3 e3.prs mem.log

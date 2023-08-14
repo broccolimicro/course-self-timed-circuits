@@ -1,0 +1,131 @@
+import "globals.act";
+
+export template <pint reset, sz>
+defproc exclhi_ideal(globals g; bool a, b, u, v)
+{
+	preal n1 = 1.0*sz;
+	preal n2 = 2.0*sz;
+	preal n3 = 3.0*sz;
+	preal p1 = 1.0*PN*sz;
+	preal p2 = 2.0*PN*sz;
+	preal p3 = 3.0*PN*sz;
+	preal p4 = 4.0*PN*sz;
+
+	bool _u, _v;
+	spec
+	{
+		mk_excllo(_u, _v)
+	}
+
+	[ reset = RESET_X ->
+		prs <g.Vdd, g.GND>
+		{
+			[keeper=0] a<n2> & _v -> _u-
+			[keeper=0] ~a<p3> | ~_v<p3> -> _u+
+			[keeper=0] b<n2> & _u -> _v-
+			[keeper=0] ~b<p3> | ~_u<p3> -> _v+
+		}
+
+		prs <_v, g.GND>
+		{
+			[keeper=0] ~_u<p3> & ~v -> u+
+			[keeper=0] _u<n1> | v<n1> -> u-
+		}
+
+		prs <_u, g.GND>
+		{
+			[keeper=0] ~_v<p3> & ~u -> v+
+			[keeper=0] _v<n1> | u<n1> -> v-
+		}
+	[] reset = RESET_N ->
+		prs <g.Vdd, g.GND>
+		{
+			[keeper=0] g._sReset<n3> & a & _v -> _u-
+			[keeper=0] ~g._sReset<PM> | ~a<p3> | ~_v<p3> -> _u+
+			[keeper=0] g._sReset<n3> & b & _u -> _v-
+			[keeper=0] ~g._sReset<PM> | ~b<p3> | ~_u<p3> -> _v+
+		}
+
+		prs <_v, g.GND>
+		{
+			[keeper=0] ~_u<p3> & ~v -> u+
+			[keeper=0] _u<n1> | v<n1> -> u-
+		}
+
+		prs <_u, g.GND>
+		{
+			[keeper=0] ~_v<p3> & ~u -> v+
+			[keeper=0] _v<n1> | u<n1> -> v-
+		}
+	[] reset = RESET_0 ->
+		prs <g.Vdd, g.GND>
+		{
+			[keeper=0] g.sReset<NM> | a<n2> & _v -> _u-
+			[keeper=0] ~g.sReset<p4> & (~a | ~_v) -> _u+
+			[keeper=0] g._sReset<n3> & b & _u -> _v-
+			[keeper=0] ~g._sReset<PM> | ~b<p3> | ~_u<p3> -> _v+
+		}
+
+		prs <_v, g.GND>
+		{
+			[keeper=0] ~_u<p3> & ~v -> u+
+			[keeper=0] _u<n1> | v<n1> -> u-
+		}
+
+		prs <_u, g.GND>
+		{
+			[keeper=0] ~_v<p4> & ~u -> v+
+			[keeper=0] _v<n1> | u<n1> -> v-
+		}
+	[] reset = RESET_1 ->
+		prs <g.Vdd, g.GND>
+		{
+			[keeper=0] g._sReset<n3> & a & _v -> _u-
+			[keeper=0] ~g._sReset<PM> | ~a<p3> | ~_v<p3> -> _u+
+			[keeper=0] g.sReset<NM> | b<n2> & _u -> _v-
+			[keeper=0] ~g.sReset<p4> & (~b | ~_u) -> _v+
+		}
+
+		prs <_v, g.GND>
+		{
+			[keeper=0] ~_u<p4> & ~v -> u+
+			[keeper=0] _u<n1> | v<n1> -> u-
+		}
+
+		prs <_u, g.GND>
+		{
+			[keeper=0] ~_v<p3> & ~u -> v+
+			[keeper=0] _v<n1> | u<n1> -> v-
+		}
+	]
+}
+
+export defproc maybe_execute(globals g; e1of<1> A, S; bool uA)
+{
+	// TODO: Implement the maybe execute element using an ideal arbiter
+	// Possible reset values: RESET_X will not reset the outputs, RESET_0 will reset them low, RESET_1 will reset them high
+	// for size, use 6
+}
+
+export defproc source(globals g; e1of<1> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+	}
+}
+
+export defproc sink(globals g; e1of<1> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] -> C.e-
+		~C.d[0] -> C.e+
+	}
+}
+

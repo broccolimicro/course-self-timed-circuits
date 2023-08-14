@@ -1,0 +1,16 @@
+import "globals.act";
+import "channel.act";
+import "sync.act";
+
+export defproc greedy_arbiter(globals g; e1of<1> A, B, S)
+{
+	// TODO: Use the maybe execute element to implement a greedy arbiter
+	// Hint: there are some peep-hole optimizations that can be done afterward
+}
+
+globals g;
+e1of<1> A, B, S;
+source source_A(g, A);
+source source_B(g, B);
+sink sink_S(g, S);
+greedy_arbiter dut(g, A, B, S);
