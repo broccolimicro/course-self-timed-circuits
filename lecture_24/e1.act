@@ -1,0 +1,27 @@
+import "globals.act";
+import "channel.act";
+import "sync.act";
+
+export defproc e1of1ToValRdy(globals g; e1of<2> L; valrdy<1> R; bool req, grant, clk)
+{
+	// TODO Implement this interface
+}
+
+export defproc testbench(globals g; e1of<2> L; valrdy<1> R; bool clk)
+{
+	bool req, grant;
+	source_stoppable_clk<30, 6> source_C(g, clk, req, grant);
+	e1of1ToValRdy ifc(g, L, R, req, grant, clk);
+
+	prs <g.Vdd, g.GND>
+	{
+		~g.GND -> R.rdy+
+	}
+}
+
+globals g;
+bool clk;
+e1of<2> L, L1;
+valrdy<1> R;
+buffer buf(g, L, L1);
+testbench dut(g, L1, R, clk);

@@ -1,0 +1,63 @@
+import "globals.act";
+
+export template <pint N>
+deftype c1of <: int (bool d[N])
+{
+}
+
+export deftype pair <: int (bool d[2])
+{
+}
+
+export template <pint N>
+defchan e1of <: chan(int) (bool d[N], e)
+{
+}
+
+export template <pint N>
+defchan valrdy <: chan(int) (bool val, rdy; pair d[N])
+{
+}
+
+export defproc source(globals g; e1of<1> C)
+{
+	bool Ca;
+	prs<g.Vdd, g.GND>
+	{
+		g._sReset & C.e -> Ca-
+		~g._sReset | ~C.e -> Ca+
+
+		Ca -> C.d[0]-
+		~Ca -> C.d[0]+
+	}
+}
+
+export defproc sink(globals g; e1of<1> C)
+{
+	prs <g.Vdd, g.GND>
+	{
+		C.d[0] -> C.e-
+		~C.d[0] -> C.e+
+	}
+}
+
+export defproc buffer(globals g; e1of<2> L, R)
+{
+	bool _R0, _R1;
+	prs <g.Vdd, g.GND>
+	{
+		g._sReset & R.e & L.d[0] -> _R0-
+		g._sReset & R.e & L.d[1] -> _R1-
+		~_R0 -> R.d[0]+
+		~_R1 -> R.d[1]+
+
+		R.d[0] | R.d[1] -> L.e-
+
+		~g._sReset | ~R.e & ~L.d[0] -> _R0+
+		~g._sReset | ~R.e & ~L.d[1] -> _R1+
+		_R0 -> R.d[0]-
+		_R1 -> R.d[1]-
+
+		~R.d[0] & ~R.d[1] -> L.e+
+	}
+}

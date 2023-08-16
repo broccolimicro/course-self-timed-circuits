@@ -1,0 +1,31 @@
+initialize
+random
+
+set_reset g.sReset
+
+bundle L.d[0:2] high
+channel L e d[0:2] e
+clocked_bus R.d[0:1] clk posedge pair half
+inject L request loop e1_L.dat
+
+mode reset
+set g.Vdd 1
+set g.GND 0
+set g._sReset 0
+set g.sReset 1
+set g._pReset 0
+set g.pReset 1
+watchall
+
+cycle
+
+set g._pReset 1
+set g.pReset 0
+
+cycle
+
+mode run
+set g._sReset 1
+set g.sReset 0
+
+advance 10000
