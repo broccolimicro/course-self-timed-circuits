@@ -120,17 +120,17 @@ defproc source_clk(globals g; bool clk, _clk)
 
 	prs<g.Vdd, g.GND>
 	{
-		g._sReset<n20> & (v[0] | v[N-2]) -> v[1]-
-		~g._sReset<NM> | ~v[0]<p20> & ~v[N-2] -> v[1]+
-		v[1]<n10> | v[N-1]<n10> -> v[0]-
-		~v[1]<p20> & ~v[N-1] -> v[0]+
+		[after=10] g._sReset<n20> & (v[0] | v[N-2]) -> v[1]-
+		[after=10] ~g._sReset<NM> | ~v[0]<p20> & ~v[N-2] -> v[1]+
+		[after=10] v[1]<n10> | v[N-1]<n10> -> v[0]-
+		[after=0] ~v[1]<p20> & ~v[N-1] -> v[0]+
 	}
 
 	(i:1..N-2:
 		prs<g.Vdd, g.GND>
 		{
-			v[i]<n1> -> v[(i+1)%N]-
-			~v[i]<p1> -> v[(i+1)%N]+
+			[after=10] v[i]<n1> -> v[(i+1)%N]-
+			[after=10] ~v[i]<p1> -> v[(i+1)%N]+
 		}
 	)
 	clk = v[0];

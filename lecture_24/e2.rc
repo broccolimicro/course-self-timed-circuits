@@ -21,4 +21,3 @@ mode run
 set g._sReset 1
 set g.sReset 0
 
-advance 10000

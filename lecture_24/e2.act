@@ -3,7 +3,7 @@ import "channel.act";
 import "sync.act";
 
 export template <pint sz>
-defproc sync(globals g; bool a0, a1, b, v)
+defproc sync(globals g; bool nclk, pclk, in, out)
 {
 	// TODO Implement the two direction arbiter
 }
