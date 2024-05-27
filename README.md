@@ -12,7 +12,7 @@ There are 24 sessions and each involves roughly 30 minutes of lecture and 30 min
 1. On Ubuntu, install the `docker.io` package from apt: `sudo apt install docker.io`, the `docker-ce` package doesn't let you write files from within the container.
 2. Pull the development environment image: `docker pull public.ecr.aws/l5h5o6z4/broccoli-cli:latest`
 3. Clone the [Toolset for Self Timed Circuits](https://git.broccolimicro.io/Broccoli/broccoli-cli.git): `git clone https://git.broccolimicro.io/Broccoli/broccoli-cli.git`
-4. Clone the [Lectures and Exercises](https://github.com/nbingham1/async-course): `git clone https://github.com/nbingham1/async-course.git`
+4. Clone the [Lectures and Exercises](https://github.com/broccolimicro/course-self-timed-circuits.git): `git clone https://github.com/broccolimicro/course-self-timed-circuits.git`
 5. Set up the toolset: `source broccoli-cli/bcli-develop.sh`
 6. Download the [Skywater 130nm PDK and Configuration Files](https://broccoli-hosting.s3.us-east-2.amazonaws.com/sky130.tar.gz)
 7. Extract to your home directory: `mkdir ~/tech; tar -xzvf sky130.tar.gz -C ~/tech`
