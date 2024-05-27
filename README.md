@@ -1,6 +1,7 @@
 # Introduction to Self Timed Circuits (Summer, 2023)
 
 **Lecturer:** [Ned Bingham](https://www.nedbingham.com/index.py)
+
 **Time:** May 15, 2023 to August 16, 2023
 
 This course covers the fundamentals of self-timed circuits including timing assumptions and guarantees, failure modes, pipeline structures, data encodings, conditional logic, internal memory, and non-deterministic behavior, hardware description languages for different layers of abstraction, and two design methodologies. It is designed with a bottom up approach, starting with circuitry and working its way up through more abstract representations. Background experience with programming is required, and circuit design is helpful but optional. The course is offered for free with the goal of building local expertise and community in VLSI, Computer Architecture, and Self-Timed Circuits.
