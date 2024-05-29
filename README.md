@@ -22,7 +22,7 @@ There are 24 sessions and each involves roughly 30 minutes of lecture and 30 min
 
 ## Digital and analog simulation
 1. Connect to the docker container for the toolset: `bcli`
-2. `cd /host/async-course/lecture_1`
+2. `cd /host/course-self-timed-circuits/lecture_1`
 3. fill in `e1.act`
 4. compile: `make e1`
 5. run the digital simulation: `prsim e1.prs`
