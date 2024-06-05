@@ -36,8 +36,8 @@ There are 24 sessions and each involves roughly 30 minutes of lecture and 30 min
 ## Fundamentals
 * Alain Martin. "[The limitations to delay-insensitivity in asynchronous circuits](https://apps.dtic.mil/sti/pdfs/ADA447737.pdf)." Springer New York, 1990.
 
-1. Digital Logic and Production Rules (slides, video)
-2. Introduction to Self Timed Circuits (slides, video)
+1. Digital Logic and Production Rules ([slides](https://docs.google.com/presentation/d/1cLKMn4uYdLjXH_-CSFSHtB_IwZgCw5KPNmtQ7OIhKKQ/edit?usp=sharing), video)
+2. Introduction to Self Timed Circuits ([slides](https://docs.google.com/presentation/d/1OzqIr0iPFxu5Yyru-aGmRNN8m_EwbITPKqGwrZ-rIzQ/edit?usp=sharing), video)
 3. Weak Condition Half Buffers (slides, video)
 4. Fundamental Concepts (slides, video)
 5. Pre-Charge Half Buffers (slides, video)
