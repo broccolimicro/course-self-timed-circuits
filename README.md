@@ -1,4 +1,4 @@
-# Introduction to Self Timed Circuits (Summer, 2024)
+# Introduction to Self-Timed Circuits (Summer, 2024)
 See [Summer 2023](https://github.com/broccolimicro/course-self-timed-circuits/tree/summer-2023)
 
 **Lecturer:** [Ned Bingham](https://www.nedbingham.com/index.py)
@@ -12,7 +12,7 @@ There are 24 sessions and each involves roughly 30 minutes of lecture and 30 min
 ## Set up the toolset
 1. On Ubuntu, install the `docker.io` package from apt: `sudo apt install docker.io`, the `docker-ce` package doesn't let you write files from within the container.
 2. Pull the development environment image: `docker pull public.ecr.aws/l5h5o6z4/broccoli-cli:latest`
-3. Clone the [Toolset for Self Timed Circuits](https://git.broccolimicro.io/Broccoli/broccoli-cli.git): `git clone https://git.broccolimicro.io/Broccoli/broccoli-cli.git`
+3. Clone the [Toolset for Self-Timed Circuits](https://github.com/broccolimicro/bcli.git): `git clone https://github.com/broccolimicro/bcli.git`
 4. Clone the [Lectures and Exercises](https://github.com/broccolimicro/course-self-timed-circuits.git): `git clone https://github.com/broccolimicro/course-self-timed-circuits.git`
 5. Set up the toolset: `source broccoli-cli/bcli-develop.sh`
 6. Download the [Skywater 130nm PDK and Configuration Files](https://broccoli-hosting.s3.us-east-2.amazonaws.com/sky130.tar.gz)
@@ -37,7 +37,7 @@ There are 24 sessions and each involves roughly 30 minutes of lecture and 30 min
 * Alain Martin. "[The limitations to delay-insensitivity in asynchronous circuits](https://apps.dtic.mil/sti/pdfs/ADA447737.pdf)." Springer New York, 1990.
 
 1. Digital Logic and Production Rules ([slides](https://docs.google.com/presentation/d/1cLKMn4uYdLjXH_-CSFSHtB_IwZgCw5KPNmtQ7OIhKKQ/edit?usp=sharing), video)
-2. Introduction to Self Timed Circuits ([slides](https://docs.google.com/presentation/d/1OzqIr0iPFxu5Yyru-aGmRNN8m_EwbITPKqGwrZ-rIzQ/edit?usp=sharing), video)
+2. Introduction to Self-Timed Circuits ([slides](https://docs.google.com/presentation/d/1OzqIr0iPFxu5Yyru-aGmRNN8m_EwbITPKqGwrZ-rIzQ/edit?usp=sharing), video)
 3. Weak Condition Half Buffers (slides, video)
 4. Fundamental Concepts (slides, video)
 5. Pre-Charge Half Buffers (slides, video)
