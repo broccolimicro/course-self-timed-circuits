@@ -11,7 +11,7 @@ There are 24 sessions and each involves roughly 30 minutes of lecture and 30 min
 
 ## Set up the toolset
 1. On Ubuntu, install the `docker.io` package from apt: `sudo apt install docker.io`, the `docker-ce` package doesn't let you write files from within the container.
-2. Pull the development environment image: `docker pull public.ecr.aws/l5h5o6z4/broccoli-cli:latest`
+2. Pull the development environment image: `docker pull broccolimicro/broccoli-cli:latest`
 3. Clone the [Toolset for Self-Timed Circuits](https://github.com/broccolimicro/bcli.git): `git clone https://github.com/broccolimicro/bcli.git`
 4. Clone the [Lectures and Exercises](https://github.com/broccolimicro/course-self-timed-circuits.git): `git clone https://github.com/broccolimicro/course-self-timed-circuits.git`
 5. Set up the toolset: `source bcli/bcli-develop.sh`
